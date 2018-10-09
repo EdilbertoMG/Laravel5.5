@@ -12,5 +12,29 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return ('Edilberto M. Gutiérrez');
+});
+
+Route::get('/usuarios',function(){
+    return('Contacto Edilberto M. Gutiérrez');
+});
+
+Route::get('/usuarios/nuevo', function(){
+
+    return("Crear nuevo usuario");
+});
+
+Route::get('/usuarios/{id}', function($id){
+
+    return("El id del usuarios es: {$id}");
+});
+
+Route::get('/saludo/{name}/{nickname?}', function($name,$nickname = null){
+
+    if($nickname){
+        return "Bienvenido: {$name}, tu apodo es: {$nickname}";
+    }else{
+            return "Bienvenido: {$name}, No tienes apodo";
+    }
+
 });
