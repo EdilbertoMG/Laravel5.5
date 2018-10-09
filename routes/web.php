@@ -15,31 +15,11 @@ Route::get('/', function () {
     return ('Edilberto M. Gutiérrez');
 });
 
-Route::get('/usuarios',function(){
-    return('Contacto Edilberto M. Gutiérrez');
-});
+Route::get('/usuarios','ControladorDeUsuarios@index');
 
-Route::get('/usuarios/nuevo', function(){
+Route::get('/usuarios/{id}','ControladorDeUsuarios@mostrar')
+->where('id','[0-9+]');
 
-    return("Crear nuevo usuario");
-});
+Route::get('/usuarios/nuevo','ControladorDeUsuarios@crear');
 
-Route::get('/usuarios/{id}', function($id){
-
-    return("El id del usuarios es: {$id}");
-});
-
-Route::get('/saludo/{name}/{nickname?}', function($name,$nickname = null){
-
-    /**
-     *metodo para poner la primera letra en mayuscula $name = ucfirst($name);
-     */
-
-    $name = ucfirst($name);
-    if($nickname){
-        return "Bienvenido: {$name}, tu apodo es: {$nickname}";
-    }else{
-            return "Bienvenido: {$name}, No tienes apodo";
-    }
-
-});
+Route::get('/saludo/{name}/{nickname?}','bienvenida@index');

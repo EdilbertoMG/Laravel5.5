@@ -15,7 +15,7 @@ class pruebas extends TestCase
     {
         $this ->get('/usuarios')
               ->assertStatus(200)
-              ->assertSee('Contacto Edilberto M. Gutiérrez');
+              ->assertSee('Usuarios');
 
     }
 
