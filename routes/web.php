@@ -31,6 +31,11 @@ Route::get('/usuarios/{id}', function($id){
 
 Route::get('/saludo/{name}/{nickname?}', function($name,$nickname = null){
 
+    /**
+     *metodo para poner la primera letra en mayuscula $name = ucfirst($name);
+     */
+
+    $name = ucfirst($name);
     if($nickname){
         return "Bienvenido: {$name}, tu apodo es: {$nickname}";
     }else{
