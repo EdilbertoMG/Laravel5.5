@@ -9,14 +9,19 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <h1><?php echo e($titulo) ?></h1>
-
+    <h1>{{ $titulo }}</h1>
+    <hr>
+    @if (! empty($usuarios))
+        
     <ul>
-    <?php foreach ($usuarios as $usuario): ?>
+    @foreach ($usuarios as $usuario)
 
-        <li><?php echo e($usuario) ?></li>
+        <li>{{ $usuario }}</li>
 
-    <?php endforeach; ?>
+    @endforeach
     </ul>
+    @else 
+    <p>No hay usuarios registrados.</p>
+    @endif
 </body>
 </html>

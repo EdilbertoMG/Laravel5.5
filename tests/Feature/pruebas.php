@@ -11,11 +11,21 @@ class pruebas extends TestCase
     /**
      * @test
      */
-    function verificaUrl()
+    function verificarUsuarios()
     {
         $this ->get('/usuarios')
               ->assertStatus(200)
-              ->assertSee('Usuarios');
+              ->assertSee('Listado de Usuarios')
+              ->assertSee('Edilberto')
+              ->assertSee('Tatiana');
+
+    }
+
+    function verificarUsuariosVacios()
+    {
+        $this ->get('/usuarios?empty')
+              ->assertStatus(200)
+              ->assertSee('No hay usuarios registrados.');
 
     }
 

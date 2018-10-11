@@ -8,13 +8,16 @@ class ControladorDeUsuarios extends Controller
 {
     public function index(){
 
-        $usuarios = [
-            'Edilberto',
-            'Tatiana',
-            'Juan',
-            'Elkin',
-            'Luis',
-        ];
+        /* si el arreglo esta vacio */
+        if (request()->has('empy')) {
+
+            $usuarios = [];
+
+        } else {
+
+            $usuarios = ['Edilberto','Tatiana','Juan','Elkin','Luis',];
+
+        }
 
         return view('usuarios',['usuarios' => $usuarios,
                                  'titulo' => 'Listado de Usuarios'
