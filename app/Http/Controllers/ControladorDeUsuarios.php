@@ -7,7 +7,18 @@ use Illuminate\Http\Request;
 class ControladorDeUsuarios extends Controller
 {
     public function index(){
-        return('Usuarios');
+
+        $usuarios = [
+            'Edilberto',
+            'Tatiana',
+            'Juan',
+            'Elkin',
+            'Luis',
+        ];
+
+        return view('usuarios',['usuarios' => $usuarios,
+                                 'titulo' => 'Listado de Usuarios'
+                                 ]);
     }
 
     public function mostrar($id){
