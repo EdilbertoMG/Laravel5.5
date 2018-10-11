@@ -9,7 +9,7 @@ class ControladorDeUsuarios extends Controller
     public function index(){
 
         /* si el arreglo esta vacio */
-        if (request()->has('empy')) {
+        if (request()->has('empty')) {
 
             $usuarios = [];
 

@@ -11,15 +11,15 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up()//metodo para crear
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
+            $table->increments('id'); //ENTERO AUTO INCREMENTADO
+            $table->string('name');  // STRING
+            $table->string('email')->unique(); // STRING UNICO
+            $table->string('password'); // STRING DE NOMBRE PASS
+            $table->rememberToken(); // TOKEN QUE RECUERDA VISITAS SUB SIGUIENTES
+            $table->timestamps(); // MARCAS DE TIEMPO, CREADO EL, ACTUALIZADO EL.
         });
     }
 
@@ -28,8 +28,8 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down()//metodo para eliminar
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('users'); //ELIMINA SI EXISTE LA TABLA USERS
     }
 }
